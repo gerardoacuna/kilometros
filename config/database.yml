@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: kilometros_development
+  pool: 5
+  username: Acuna
+  password:
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: kilometros_test
+  pool: 5
+  username: Acuna
+  password:
+  host: localhost
