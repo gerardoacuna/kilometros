@@ -1,0 +1,20 @@
+<%= simple_nested_form_for(@race) do |f| %>
+  
+  <%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.input :place %>
+
+  <%= f.fields_for :race_details do |details_form| %>
+    <h4>Details</h4>
+    <hr>
+    <%= details_form.input :distance %>
+    <%= details_form.input :date %>
+    <%= details_form.link_to_remove "Remove this task" %>
+  <% end %>
+
+  <p><%= f.link_to_add "Add details", :race_details %></p>
+
+  <%= f.submit 'Save', class: 'btn' %>
+
+<% end %>

@@ -10,6 +10,8 @@ gem "bootstrap-sass", ">= 2.1.0.1"
 gem "simple_form", "~> 2.0.4"
 gem "client_side_validations"
 gem "client_side_validations-simple_form", "~> 2.0.1"
+gem "nested_form"
+gem "paperclip"
 
 # Gems used only for assets and not required
 # in production environments by default.
