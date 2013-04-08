@@ -1,0 +1,28 @@
+=alert-states($color)
+  background-color: $color
+  border: $color
+  color: $inverse
+  text-shadow: none
+  // &:hover,
+  // &:focus
+  //   background-color: scale-color($color, $lightness: 20%)
+  // &:active,
+  // &.active
+  //   background-color: scale-color($color, $lightness: -15%)
+
+.alert
+  // Colors -----------------------
+  &.alert-primary
+    +alert-states($firm)
+
+  &.alert-info
+    +alert-states($info)
+
+  &.alert-danger, &.alert-error
+    +alert-states($danger)
+
+  &.alert-success
+    +alert-states($success)
+
+  &.alert-warning
+    +alert-states($warning)

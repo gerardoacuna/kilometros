@@ -1,11 +1,11 @@
-<%= simple_nested_form_for(@user) do |f| %>
+<%= simple_nested_form_for @user, html: { class: 'login-form' }, defaults: { input_html: { class: 'login-field' }, label: '' }, :validate => true do |f| %>
 
   <%= f.error_notification %>
 
-  <%= f.input :first_name %>
-  <%= f.input :last_name %>
-  <%= f.input :email %>
+  <%= f.input :first_name, placeholder: 'Nombre', label_html: { class: 'login-field-icon fui-man-16' } %>
+  <%= f.input :last_name, placeholder: 'Apellido', label_html: { class: 'login-field-icon fui-man-16' }%>
+  <%= f.input :email, placeholder: 'Email', label_html: { class: 'login-field-icon fui-mail-16' } %>
 
-  <%= f.submit 'Save', class: 'btn' %>
+  <%= f.submit 'Save', class: 'btn btn-large btn-block' %>
 
 <% end %>

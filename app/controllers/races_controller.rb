@@ -5,40 +5,34 @@ class RacesController < ApplicationController
     @races = Race.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
       format.json { render json: @races }
     end
   end
 
-  # GET /races/1
-  # GET /races/1.json
   def show
     @race = Race.find(params[:id])
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.json { render json: @race }
     end
   end
 
-  # GET /races/new
-  # GET /races/new.json
   def new
     @race = Race.new
+    @race.build_attachment
 
     respond_to do |format|
-      format.html # new.html.erb
+      format.html
       format.json { render json: @race }
     end
   end
 
-  # GET /races/1/edit
   def edit
     @race = Race.find(params[:id])
   end
 
-  # POST /races
-  # POST /races.json
   def create
     @race = Race.new(params[:race])
 

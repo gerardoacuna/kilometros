@@ -11,6 +11,18 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require jquery_nested_form
+//= require bootstrap
+//= require custom_checkbox_and_radio
+//= require dropkick
+//= require placeholder
+//= require custom_radio
+//= require tagsinput
+//= require rails.validations
+//= require rails.validations.simple_form
+//= require wizards
 //= require_tree .
+
+

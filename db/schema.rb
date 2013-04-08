@@ -11,7 +11,35 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130407212039) do
+ActiveRecord::Schema.define(:version => 20130408214250) do
+
+  create_table "attachments", :force => true do |t|
+    t.text     "description"
+    t.string   "file"
+    t.integer  "attachable_id"
+    t.string   "attachable_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "attachments", ["attachable_id"], :name => "index_attachments_on_attachable_id"
+
+  create_table "causes", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "end_date"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "donations", :force => true do |t|
+    t.integer  "cause_id"
+    t.integer  "user_id"
+    t.decimal  "amount"
+    t.integer  "race_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "race_details", :force => true do |t|
     t.datetime "date"

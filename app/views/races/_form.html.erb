@@ -1,4 +1,4 @@
-<%= simple_nested_form_for(@race) do |f| %>
+<%= simple_nested_form_for @race, html: { multipart: true } do |f| %>
   
   <%= f.error_notification %>
 
@@ -11,6 +11,10 @@
     <%= details_form.input :distance %>
     <%= details_form.input :date %>
     <%= details_form.link_to_remove "Remove this task" %>
+  <% end %>
+
+  <%= f.fields_for :attachment do |attachment_form|  %>
+    <%= attachment_form.file_field :file %>
   <% end %>
 
   <p><%= f.link_to_add "Add details", :race_details %></p>

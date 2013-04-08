@@ -1,30 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-large pull-right' %>
 
-<p>
-  <b>First name:</b>
-  <%= @user.first_name %>
-</p>
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<h4><%= @user.email %></h4>
 
-<p>
-  <b>Last name:</b>
-  <%= @user.last_name %>
-</p>
+<h2>Donations</h2>
+<hr>
 
-<p>
-  <b>Email:</b>
-  <%= @user.email %>
-</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Cause</th>
+      <th>Amount</th>
+      <th>Race</th>
+    </tr>
+  </thead>
 
-<p>
-  <b>Password:</b>
-  <%= @user.password %>
-</p>
+<% @user.donations.each do |donation| %>
+  <tr>
+    <td><%= donation.cause.name %></td>
+    <td><%= number_to_currency(donation.amount) %></td>
+    <td><%= donation.race.name %></td>
+  </tr>
+<% end %>
+</table>
 
-<p>
-  <b>Password confirmation:</b>
-  <%= @user.password_confirmation %>
-</p>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
+ |
 <%= link_to 'Back', users_path %>

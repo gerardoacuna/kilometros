@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @cause.attachment.file_url %>
+
+<p>
+  <b>Name:</b>
+  <%= @cause.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @cause.description %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @cause.end_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_cause_path(@cause) %> |
+<%= link_to 'Back', causes_path %>

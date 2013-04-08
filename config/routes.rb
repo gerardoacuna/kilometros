@@ -1,5 +1,11 @@
 Kilometros::Application.routes.draw do
   
+  resources :donations
+
+
+  resources :causes
+
+
   resources :races
   resources :users
   root to: 'users#new'

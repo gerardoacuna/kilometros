@@ -1,18 +1,21 @@
 <h1>Listing races</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Place</th>
-    <th>Date</th>
-    <th>Distance</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Place</th>
+      <th>Date</th>
+      <th>Distance</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
 <% @races.each do |race| %>
   <tr>
+    <td><%= image_tag race.attachment.file_url(:thumb) %></td>
     <td><%= race.name %></td>
     <td><%= race.place %></td>
   <% race.race_details.each do |details| %>
