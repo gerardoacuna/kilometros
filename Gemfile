@@ -13,6 +13,7 @@ gem "client_side_validations-simple_form", "~> 2.0.1"
 gem "nested_form"
 gem "rmagick"
 gem "carrierwave", '~> 0.5.3'
+gem 'fog'
 
 # Gems used only for assets and not required
 # in production environments by default.

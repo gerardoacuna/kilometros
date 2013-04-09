@@ -1,6 +1,8 @@
 class ChangeDistanceToDecimal < ActiveRecord::Migration
   def up
-  	change_column :race_details, :distance, :decimal
+  	rename_column :race_details, :distance, :algo
+	  add_column :race_details, :distance, :decimal
+  	remove_columns :race_details, :algo
   end
 
   def down
